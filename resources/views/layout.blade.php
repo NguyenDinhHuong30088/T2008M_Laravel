@@ -27,8 +27,8 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    @yield("main")
-    <!-- /.content-wrapper -->
+@yield("main")
+<!-- /.content-wrapper -->
     <x-footer/>
 
     <!-- Control Sidebar -->
@@ -38,6 +38,7 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-<x-script/>
+
+<x-scripts/>
 </body>
 </html>

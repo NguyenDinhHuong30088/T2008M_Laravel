@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\User\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +15,9 @@ use App\Http\Controllers\WebController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// danh cho user
+Route::match(["get","post"],"login",[LoginController::class,"login"])->name("login");
 
-Route::get('/',[WebController::class,"home"]);
-Route::get('/about-us',[WebController::class,"aboutUs"]);
+Route::middleware("auth")->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
