@@ -2,7 +2,7 @@
 
 namespace resources\view\PRACTICAL\Controllers;
 
-use App\Apartment;
+use resources\view\PRACTICAL\Controllers\Apartment;
 
 class ApartmentController extends Controller
 {
