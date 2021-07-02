@@ -1,4 +1,4 @@
-@extends("layoutmain")
+@extends("layout")
 @section("main")
     <div class="content-wrapper" style="min-height: 1299.69px;">
         <!-- Content Header (Page header) -->
