@@ -43,14 +43,14 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($apartments as $apart)
+                                        @foreach($apartment as $apart)
                                             <tr>
                                                 <td>{{$apart->id}}</td>
                                                 <td>{{$apart->name}}</td>
                                                 <td>{{$apart->address}}</td>
-                                                <td>{{$apart->public_information}}</td>
+                                                <td>{{$apart->general_information}}</td>
                                                 <td>{{$apart->detail_information}}</td>
-                                                <td><img width="70px" height="70px" src="{{$apart->image}}"/> </td>
+                                                <td><img width="80px" height="80px" src="{{$apart->images}}"/></td>
                                             </tr>
                                         @endforeach
                                         </tbody>
