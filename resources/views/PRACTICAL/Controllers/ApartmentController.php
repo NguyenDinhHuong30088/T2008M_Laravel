@@ -8,7 +8,7 @@ class ApartmentController extends Controller
 {
     public function all(){
         $apartment = Apartment::all();
-        return view("apartment.list2",[
+        return view("home",[
             "apart"=>$apartment
         ]);
     }
