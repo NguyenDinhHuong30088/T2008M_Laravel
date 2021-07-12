@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Product</h1>
+                        <h1>Category</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <a href="{{url("/products/new")}}" class="btn btn-outline-primary">Thêm mới</a>
+                                <a href="{{url("/categories/new")}}" class="btn btn-outline-primary">Thêm mới</a>
                             </div>
                         </div>
                     </div>
@@ -37,37 +37,31 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Image</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Qty</th>
-                                <th>Category</th>
+                                <th>Products total</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($products as $item)
+                            @foreach ($categories as $cat)
                                 <tr>
-                                    <td>{{$item->__get("id")}}</td>
-                                    <td>{{$item->__get("name")}}</td>
-                                    <td><img width="70px" height="70px" src="{{$item->getImage()}}"/> </td>
-                                    <td>{{$item->__get("description")}}</td>
-                                    <td>{{$item->__get("price")}}</td>
-                                    <td>{{$item->__get("qty")}}</td>
-                                    {{--                                    <td>{{$item->__get("category_name")}}</td>--}}
-                                    <td>{{$item->Category->__get("name")}}</td>
-                                    <td>{{formatDate($item->__get("created_at"))}}</td>
-                                    <td>{{formatDate($item->__get("updated_at"))}}</td>
-                                    <td><a href="{{url("/products/edit",["id"=>$item->id])}}">Điều chỉnh</a></td>
-                                    <td><a href="{{url("admin/products/add-to-cart",["id"=>$item->id])}}">Add To Cart</a></td>
+                                    <td>{{$cat->id}}</td>
+                                    <td>{{$cat->name}}</td>
+                                    <td>{{$cat->products_count}}</td>
+                                    <td>{{formatDate($cat->created_at)}}</td>
+                                    <td>{{formatDate($cat->updated_at)}}</td>
+                                    <td><a href="{{url("/categories/edit",["id"=>$cat->id])}}">Điều chỉnh</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+
                     </div>
                     <!-- /.card-body -->
+                    <div class="card-footer">
+                        {!! $categories->links("vendor.pagination.default") !!}
+                    </div>
                 </div>
             </div>
         </section>

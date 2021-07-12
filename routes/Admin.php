@@ -22,7 +22,8 @@ Route::middleware("auth:admin")->group(function (){
 
     Route::get('/products',[ProductController::class,"all"]);
     Route::get('/products/new',[ProductController::class,"form"]);
-    Route::post('/products/save',[ProductController::class,"save"]);
+    Route::post('/products/add-to-cart',[ProductController::class,"save"]);
+    Route::get('/products/add-to-cart',[ProductController::class,"save"]);
 });
 
 ///request -> routing -> middleware (kiem tra)   ---> controller
