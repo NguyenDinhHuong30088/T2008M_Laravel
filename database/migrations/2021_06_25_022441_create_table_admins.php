@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTableAdmins extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
@@ -22,12 +17,6 @@ class CreateTableAdmins extends Migration
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('admins');
